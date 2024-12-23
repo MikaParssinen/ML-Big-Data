@@ -1,8 +1,8 @@
-PWD /Users/mika/ML-Big-Data/Project-Report/report
+PWD /Users/mika/ML-Big-Data/Project/report
 INPUT /usr/local/texlive/2022/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/mika/ML-Big-Data/Project-Report/report/DVA263_INL1_Group_01.tex
+INPUT /Users/mika/ML-Big-Data/Project/report/DVA263_INL1_Group_01.tex
 OUTPUT DVA263_INL1_Group_01.log
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
@@ -791,13 +791,6 @@ INPUT ./src/problem_formulation.tex
 INPUT src/problem_formulation.tex
 INPUT ./src/problem_formulation.tex
 INPUT src/problem_formulation.tex
-INPUT ./src/introduction.tex
-INPUT ./src/introduction.tex
-INPUT ./src/introduction.tex
-INPUT src/introduction.tex
-INPUT ./src/introduction.tex
-INPUT ./src/introduction.tex
-INPUT src/introduction.tex
 INPUT ./src/implementation.tex
 INPUT src/implementation.tex
 INPUT ./src/implementation.tex
