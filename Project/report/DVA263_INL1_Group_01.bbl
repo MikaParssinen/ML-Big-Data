@@ -1,0 +1,25 @@
+\begin{thebibliography}{1}
+
+\bibitem{BTS2011}
+{Bureau of Transportation Statistics}, ``{Long-Distance Travel Patterns of
+  Americans}.''
+  \url{https://www.bts.gov/archive/publications/america_on_the_go/long_distance_transportation_patterns_of_americans},
+  2011.
+\newblock Accessed: 2024-12-06.
+
+\bibitem{ApacheSpark}
+{Apache Software Foundation}, ``Apache spark.'' \url{https://spark.apache.org},
+  2025.
+\newblock Accessed: 2025-01-29.
+
+\bibitem{LR}
+D.~C. Montgomery, E.~A. Peck, and G.~G. Vining, {\em Introduction to Linear
+  Regression Analysis}.
+\newblock Wiley, 6th~ed., 2021.
+
+\bibitem{SparkMLlib}
+{Apache Software Foundation}, ``Mllib: Machine learning in apache spark.''
+  \url{https://spark.apache.org/mllib/}, 2025.
+\newblock Accessed: 2025-01-29.
+
+\end{thebibliography}
