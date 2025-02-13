@@ -1,1 +1,43 @@
 \section{Implementation}
+This project was implemented by using Apache Spark \cite{ApacheSpark}, a distributed computing framework which is great for processing large scale data. 
+The implementation followed a systematic approach comprising several key stages of data preprocessing, model development, and analysis.
+
+\subsection{Data Preprocessing}
+The initial preprocessing stage involved critical steps to ensure data quality and consistency. 
+I began by removing columns that i thought was unnecessary, additionally i removed cancelled flights to focus on actual delay patterns, as these represent anomalies rather than predictable delays. 
+Missing values in key fields including arrival time, elapsed time, and delay related columns were filled by a 0.
+I combined different types of delays into one "TotalDelay" feature to better predict and analyze flight delays in my model.
+
+\subsection{Feature Selection and Engineering}
+Based on correlation analysis and domain knowledge, these six key features were selected for the model:
+
+\begin{itemize}
+\item Departure Delay
+\item Distance
+\item Taxi-In Time
+\item Taxi-Out Time
+\item Carrier Delay
+\item Weather Delay
+\end{itemize}
+These features were chosen after a analysis of their correlations with arrival delays, I found particularly strong relationships with taxi-out time (correlation: 0.322) and moderate relationships with taxi-in time (correlation: 0.123). Interestingly, distance showed only a weak positive correlation (0.007), which disrupt some of my assumptions about flight delays.
+
+\subsection{Model Development}
+The dataset was split using an 80-20 ratio, with 80\% used for training and 20\% for testing and evaluation. I implement a Linear Regression \cite{LR} model using PySpark's ML library \cite{SparkMLlib}, with features assembled into vectors using VectorAssembler. 
+The model's hyperparameters was tuned using the CrossValidator with a 3-fold cross-validation approach.
+The hyperparameter optimization explored different combinations of:
+
+\begin{itemize}
+\item RegParam: [0.01, 0.1, 1.0]
+\item ElasticNetParam: [0.0, 0.5, 1.0]
+\end{itemize}
+
+The final model used the optimal parameters of RegParam = 0.01 and ElasticNetParam = 0.0, as determined by the Grid Search.
+
+\subsection{Initial Data Analysis}
+The initial analysis revealed several important patterns in flight delays:
+
+\subsubsection{Time-based patterns}
+Day-of-week analysis showed highest average delays on Day 5 (Friday) (10.95 minutes), while monthly analysis revealed December as having the highest delays (16.68 minutes). These patterns suggest significant time-based patterns in delay probabilities that could be valuable for both airlines and passengers in planning.
+
+\subsubsection{Carrier Performance}
+Significant variations were observed among carriers, with average delays ranging from -2.89 to 12.61 minutes. This variance indicates that carrier-specific factors play a substantial role in delay patterns, though these differences might also reflect variations in route networks and operational environments.
